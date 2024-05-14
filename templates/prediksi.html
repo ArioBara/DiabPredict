@@ -1,0 +1,151 @@
+{% extends 'base.html' %}
+{% set page = 'prediksi' %}
+{% block body %}
+<!-- App Capsule -->
+<div id="appCapsule">
+    <!-- Label Absensi Hari ini -->
+    <div class="section">
+        <div class="row mt-2">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-success text-light">
+                        <i class="fas fa-stethoscope"></i>
+                        <span class="ml-1">Cek Diabetes</span>
+                    </div>
+                    <div class="card-body overflow-auto" style="max-height: 400px;">
+                        <form id="update-profile" method="post" action="{{ url_for('prediksi') }}">
+                            <div class="form-group boxed">
+                                <div class="input-wrapper">
+                                    <label for="text4">Berapa Umur Anda?</label>
+                                    <input type="number" class="form-control" name="age" required>
+                                    <i class="clear-input">
+                                        <ion-icon name="close-circle"></ion-icon>
+                                    </i>
+                                </div>
+                            </div>
+                        
+                            <div class="form-group boxed">
+                                <div class="input-wrapper">
+                                    <label for="select4">Jenis Kelamin Anda?</label>
+                                    <select class="form-control custom-select" name="gender" id="positionSelect">
+                                        <option selected>--Pilih--</option>
+                                        <option value="1">Laki - Laki</option>
+                                        <option value="0">Perempuan</option>
+                                    </select>
+                                </div>
+                            </div>
+                        
+                            <div class="form-group boxed">
+                                <div class="input-wrapper">
+                                    <label for="select4">Apakah Anda sering buang air kecil dibandingkan hari biasanya?</label>
+                                    <select class="form-control custom-select" name="polyuria">
+                                        <option selected>--Pilih--</option>
+                                        <option value="1">Ya</option>
+                                        <option value="0">Tidak</option>
+                                    </select>
+                                </div>
+                            </div>
+                        
+                            <div class="form-group boxed">
+                                <div class="input-wrapper">
+                                    <label for="select4">Apakah Anda mengalami rasa haus yang berlebihan?</label>
+                                    <select class="form-control custom-select" name="polydipsia">
+                                        <option selected>--Pilih--</option>
+                                        <option value="1">Ya</option>
+                                        <option value="0">Tidak</option>
+                                    </select>
+                                </div>
+                            </div>
+                        
+                            <div class="form-group boxed">
+                                <div class="input-wrapper">
+                                    <label for="select4">Apakah Anda mengalami penurunan berat badan secara tiba-tiba?</label>
+                                    <select class="form-control custom-select" name="sudden_weight_loss">
+                                        <option selected>--Pilih--</option>
+                                        <option value="1">Ya</option>
+                                        <option value="0">Tidak</option>
+                                    </select>
+                                </div>
+                            </div>
+                        
+                            <div class="form-group boxed">
+                                <div class="input-wrapper">
+                                    <label for="select4">Apakah Anda merasa lemah?</label>
+                                    <select class="form-control custom-select" name="weakness">
+                                        <option selected>--Pilih--</option>
+                                        <option value="1">Ya</option>
+                                        <option value="0">Tidak</option>
+                                    </select>
+                                </div>
+                            </div>
+                        
+                            <div class="form-group boxed">
+                                <div class="input-wrapper">
+                                    <label for="select4">Apakah Anda merasa lapar terus menerus?</label>
+                                    <select class="form-control custom-select" name="polyphagia">
+                                        <option selected>--Pilih--</option>
+                                        <option value="1">Ya</option>
+                                        <option value="0">Tidak</option>
+                                    </select>
+                                </div>
+                            </div>
+                        
+                            <div class="form-group boxed">
+                                <div class="input-wrapper">
+                                    <label for="select4">Apakah Anda mengalami penglihatan kabur?</label>
+                                    <select class="form-control custom-select" name="visual_blurring">
+                                        <option selected>--Pilih--</option>
+                                        <option value="1">Ya</option>
+                                        <option value="0">Tidak</option>
+                                    </select>
+                                </div>
+                            </div>
+                        
+                            <div class="form-group boxed">
+                                <div class="input-wrapper">
+                                    <label for="select4">Apakah Anda merasa mudah tersinggung?</label>
+                                    <select class="form-control custom-select" name="irritability">
+                                        <option selected>--Pilih--</option>
+                                        <option value="1">Ya</option>
+                                        <option value="0">Tidak</option>
+                                    </select>
+                                </div>
+                            </div>
+                        
+                            <div class="form-group boxed">
+                                <div class="input-wrapper">
+                                    <label for="select4">Apakah Anda mengalami kelumpuhan sebagian?</label>
+                                    <select class="form-control custom-select" name="partial_paresis">
+                                        <option selected>--Pilih--</option>
+                                        <option value="1">Ya</option>
+                                        <option value="0">Tidak</option>
+                                    </select>
+                                </div>
+                            </div>
+                        
+                            <div class="form-group boxed">
+                                <div class="input-wrapper">
+                                    <label for="select4">Apakah Anda mengalami kebotakan?</label>
+                                    <select class="form-control custom-select" name="alopecia">
+                                        <option selected>--Pilih--</option>
+                                        <option value="1">Ya</option>
+                                        <option value="0">Tidak</option>
+                                    </select>
+                                </div>
+                            </div>
+                        
+                            <hr>
+                            <button type="submit" class="btn btn-success mr-1 btn-lg btn-block btn-profile">Diagnosa</button>
+                        
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<!-- * App Capsule -->
+{% endblock %}

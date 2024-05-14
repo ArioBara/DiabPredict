@@ -1,0 +1,60 @@
+<script>
+    google.charts.load('current', { packages: ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart);
+
+    google.charts.load('current', { packages: ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        // Set Data
+        const data = google.visualization.arrayToDataTable([
+            ['Tahun', 'Juta Orang'],
+            ['2000', 5.65],
+            ['2011', 7.29],
+            ['2021', 19.47],
+            ['2030', 23.33],
+            ['2045', 28.57]
+        ]);
+        // Set Options
+        const options = {
+            title: 'Proyeksi Jumlah Penderita Diabetes di Indonesia',
+            hAxis: { title: 'Tahun' },
+            vAxis: { title: 'Juta Orang' },
+            legend: 'none',
+            colors: ['#1DCC70'], // Warna garis hijau
+        };
+        // Draw
+        const chart = new google.visualization.LineChart(document.getElementById('myChart'));
+        chart.draw(data, options);
+    }
+
+</script>
+<script>
+    google.charts.load('current', { packages: ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart);
+
+    google.charts.load('current', { packages: ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        // Set Data
+        const data = google.visualization.arrayToDataTable([
+            ['Country', 'Jumlah'],
+            ['Mozambik', 86.7],
+            ['Uzbekistan', 74],
+            ['Indonesia', 73.7],
+            ['Afghanistan', 71.4],
+            ['Filipina', 66.7]
+        ]);
+        // Set Options
+        const options = {
+            title: 'Proporsi Diabetes Tidak Terdiagnosis Berdasarkan Negara',
+            legend: 'none',
+            colors: ['#1DCC70'], // Warna garis hijau
+        };
+        // Draw
+        const chart = new google.visualization.BarChart(document.getElementById('myChart2'));
+        chart.draw(data, options);
+    }
+
+</script>

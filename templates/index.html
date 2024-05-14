@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+{% set page = 'beranda' %}
+{% block body %}
+<!-- App Capsule -->
+<div id="appCapsule">
+    <!-- Wallet Card -->
+    <!--Jumbotron-->
+    <div class="section mt-2 mb-2">
+        <div class="row jumbotron custom-jumbotron">
+            <div class="col-sm-8">
+                <h1 class="text-success">
+                    Selamat datang di DiabPredict!
+                </h1>
+                <p class="lead">Selamat datang di aplikasi deteksi risiko diabetes! Kami hadir untuk membantu Anda
+                    memantau dan memahami risiko Anda terkait penyakit diabetes. Dengan algoritma canggih kami, kami
+                    dapat menyediakan perkiraan risiko Anda berdasarkan faktor-faktor seperti riwayat medis, gaya hidup,
+                    dan pola makan. Mari bergabung bersama kami dalam perjalanan untuk memahami dan mengelola kesehatan
+                    Anda dengan lebih baik.
+                </p>
+                <a href="{{ url_for('prediksi') }}" class="btn-lg btn-success">Mulai</a>
+            </div>
+            <div class="col-sm-4 d-flex align-content-center">
+                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                <lottie-player src="https://lottie.host/c564b82f-bee4-4a04-af3b-e109b01bf952/cgLpAO3vou.json"
+                    background="##FFFFFF" speed="1" style="width: 300px; height: 300px" loop autoplay direction="1"
+                    mode="normal"></lottie-player>
+            </div>
+        </div>
+    </div>
+    <!-- Wallet Card -->
+
+    <!-- Label Absensi Hari ini -->
+    <div class="section">
+        <div class="row mt-2 mb-2">
+            <div class="col-12 text-center">
+                <h2 class="text-success">Keunggulan</h2>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row text-center padding">
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <img src="{{ url_for('static', filename='img/easy.png') }}"
+                        class="bd-placeholder-img rounded-circle mb-2" width="140" height="140" />
+                    <h2 class="text-success">Mudah Digunakan</h2>
+                    <p>Antarmuka pengguna yang intuitif dan ramah pengguna membuat aplikasi ini mudah digunakan oleh
+                        semua kalangan, baik mereka yang memiliki pengetahuan medis yang terbatas maupun yang mahir.</p>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <img src="{{ url_for('static', filename='img/bolt.png') }}"
+                        class="bd-placeholder-img rounded-circle mb-2" width="140" height="140" />
+                    <h2 class="text-success">Cepat</h2>
+                    <p>Dengan algoritma yang efisien dan teknologi canggih, aplikasi ini memberikan hasil evaluasi
+                        risiko dengan cepat, memungkinkan pengguna untuk segera mendapatkan informasi yang mereka
+                        butuhkan.</p>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <img src="{{ url_for('static', filename='img/archive.png') }}"
+                        class="bd-placeholder-img rounded-circle mb-2" width="140" height="140" />
+                    <h2 class="text-success">Dapat Diandalkan</h2>
+                    <p>Aplikasi ini didukung oleh data yang valid dan algoritma yang teruji, sehingga memberikan hasil
+                        yang dapat diandalkan dan akurat dalam menilai risiko diabetes seseorang.</p>
+                </div>
+            </div>
+            <hr class="my-4" />
+        </div>
+    </div>
+
+
+    <!-- <div>bagian ini disembunyikan</div> -->
+
+
+
+    <div class="section mt-2 mb-2">
+        <div class="section-title text-center">
+            <h2 class="text-success">Informasi</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <div class="card h-100">
+                    <div class="card-header bg-success text-white">
+                        <span class="me-2"><i class="fas fa-chart-bar"></i></span>
+                        Proyeksi Jumlah Penderita Diabetes di Indonesia
+                    </div>
+                    <div class="card-body">
+                        <div id="myChart" style="width:100%; height:100%;"></div>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Sumber :</small>
+                        <a href="https://databoks.katadata.co.id/datapublish/2021/11/24/jumlah-penderita-diabetes-di-indonesia-diproyeksikan-capai-2857-juta-pada-2045">
+                            <img src="https://databoks.katadata.co.id/img/pemilu/Logo-Databoks-2023-with-hashtag.png"
+                                height="25" width="100" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="card h-100">
+                    <div class="card-header bg-success text-white">
+                        <span class="me-2"><i class="fas fa-chart-bar"></i></span>
+                        Proporsi Diabetes Tidak Terdiagnosis Berdasarkan Negara
+                    </div>
+                    <div class="card-body">
+                        <div id="myChart2" style="width:100%; height:100%;"></div>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Sumber :</small>
+                        <a href="https://databoks.katadata.co.id/datapublish/2021/11/25/ri-peringkat-ke-3-negara-dengan-proporsi-diabetes-belum-terdiagnosis-terbanyak">
+                            <img src="https://databoks.katadata.co.id/img/pemilu/Logo-Databoks-2023-with-hashtag.png"
+                                height="25" width="100" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

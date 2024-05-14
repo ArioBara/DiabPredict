@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% set page = 'hidup_sehat' %}
+{% block body %}
+<!-- App Capsule -->
+<div id="appCapsule">
+
+    <!-- Section: Tips Kesehatan -->
+    <div class="section">
+        <div class="row mt-2">
+            <div class="col-12 mb-3">
+                <div class="card h-100">
+                    <div class="card-header bg-warning text-light">
+                        <i class="fas fa-exclamation-triangle"></i> Peringatan
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Dalam Proses</h5>
+                        <p class="card-text">Halaman masih dalam proses pengerjaan, Mohon bersabar halaman akan di update dikemudian hari</p>
+                        <p class="text-muted">by: Ario Bara Riski 😁</p>
+                        <a href="{{ url_for('index') }}" class="btn btn-warning">Kembali ke Beranda</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+{% endblock %}

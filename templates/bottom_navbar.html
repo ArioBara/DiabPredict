@@ -1,0 +1,50 @@
+<div class="appBottomMenu">
+    <a href="{{ url_for('index') }}" class="item">
+        <div class="col">
+            {% if page == 'beranda' %}
+            <ion-icon name="home-outline" class="text-success"></ion-icon>
+            <strong class="text-success">Beranda</strong>
+            {% else %}
+            <ion-icon name="home-outline"></ion-icon>
+            <strong>Beranda</strong>
+            {% endif %}
+        </div>
+    </a>
+
+    <a href="{{ url_for('prediksi') }}" class="item">
+        <div class="col">
+            {% if page == 'prediksi' %}
+            <ion-icon name="fitness-outline" class="text-success"></ion-icon>
+            <strong class="text-success">Prediksi</strong>
+            {% else %}
+            <ion-icon name="fitness-outline"></ion-icon>
+            <strong>Prediksi</strong>
+            {% endif %}
+        </div>
+    </a>
+
+    <a href="{{ url_for('pencegahan') }}" class="item">
+        <div class="col">
+            {% if page == 'pencegahan' %}
+            <ion-icon name="hand-left-outline" class="text-success"></ion-icon>
+            <strong class="text-success">Pencegahan</strong>
+            {% else %}
+            <ion-icon name="hand-left-outline"></ion-icon>
+            <strong>Pencegahan</strong>
+            {% endif %}
+        </div>
+    </a>
+
+    <a href="{{ url_for('hidup_sehat') }}" class="item">
+        <div class="col">
+            {% if page == 'hidup_sehat' %}
+            <ion-icon name="logo-electron" class="text-success"></ion-icon>
+            <strong class="text-success">Algorima</strong>
+            {% else %}
+            <ion-icon name="logo-electron"></ion-icon>
+            <strong>Algoritma</strong>
+            {% endif %}
+        </div>
+    </a>
+</div>
+<!-- * App Bottom Menu -->

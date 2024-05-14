@@ -1,0 +1,78 @@
+<div class="loading">
+    <div class="spinner-border text-primary" role="status"></div>
+</div>
+<!-- loader -->
+<div id="loader">
+    <img src="{{ url_for('static', filename='img/logo-icon.png') }}" alt="icon" class="loading-icon">
+</div>
+
+<!-- App Header -->
+<div class="appHeader bg-success text-light">
+    <div class="left">
+        <a href="#" class="headerButton" data-toggle="modal" data-target="#sidebarPanel">
+            <ion-icon name="menu-outline"></ion-icon>
+            <!-- <strong>Menu</strong> -->
+        </a>
+    </div>
+    <div class="pageTitle">
+        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="logo" class="logo">
+    </div>
+</div>
+
+<!-- App Sidebar -->
+<div class="modal fade panelbox panelbox-left" id="sidebarPanel" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body p-0">
+                <!-- profile box -->
+                <div class="profileBox pt-2 pb-2">
+                    <a href="#" class="btn btn-link btn-icon sidebar-close" data-dismiss="modal">
+                        <ion-icon name="close-outline"></ion-icon>
+                    </a>
+                </div>
+                <!-- * profile box -->
+
+                <!-- menu -->
+                <div class="listview-title mt-1">Menu</div>
+                <ul class="listview flush transparent no-line image-listview">
+                    <li>
+                        <a href="{{ url_for('index') }}" class="item">
+                            <div class="icon-box bg-success">
+                                <ion-icon name="home-outline"></ion-icon>
+                            </div> Beranda
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('prediksi') }}" class="item">
+                            <div class="icon-box bg-success">
+                                <ion-icon name="fitness-outline"></ion-icon>
+                            </div>
+                            Prediksi
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{ url_for('pencegahan') }}" class="item">
+                            <div class="icon-box bg-success">
+                                <ion-icon name="hand-left-outline"></ion-icon>
+                            </div>
+                            Pencegahan
+                        </a>
+                    </li>
+
+                    <!-- <li>
+                        <a href="#" class="item">
+                            <div class="icon-box bg-success">
+                                <ion-icon name="body-outline"></ion-icon>
+                            </div>
+                            Hidup Sehat
+                        </a>
+                    </li> -->
+
+                </ul>
+                <!-- * menu -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- * App Sidebar -->

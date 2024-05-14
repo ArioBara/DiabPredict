@@ -1,0 +1,113 @@
+
+/* -----  ID Card -----------*/
+.id-card{
+  position: relative;
+  width:300px;
+  height:430px;
+  margin:auto;
+  border-radius:30px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px 0 rgb(0 0 0 / 9%);
+}
+
+.id-card .body-id-card{
+    background:url(../img/bg-id-card.png) no-repeat center;
+    height:100%;
+    width: 100%;
+    padding: 30px;
+}
+
+.id-card .body-id-card .avatar{
+  margin-bottom: 10px;
+}
+
+.id-card .body-id-card h3{
+  font-size: 16px;
+  text-align: center;
+  margin: auto;
+}
+
+.id-card .body-id-card p{
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #333333;
+}
+
+.id-card .body-id-card .barcode{
+  position: relative;
+  display: inline-block;
+  background:#ffffff;
+  height: 155px;
+  width: 155px;
+  box-shadow: 0 5px 20px 0 rgb(0 0 0 / 9%);
+  margin-top: 30px;
+  border:solid 2px #ffffff;
+  overflow: hidden;
+  text-align: center;
+}
+
+.id-card .body-id-card .barcode img{
+  height:150px;
+  width: 150px;
+  text-align: center;
+  display: inline-block;
+}
+
+@media screen, print {
+  header, footer, aside, nav, form, iframe, .menu, .hero, .adslot {
+    display: none;
+  }
+    /* -----  ID Card -----------*/
+    .id-card{
+      position: relative;
+      width:300px;
+      height:430px;
+      margin:auto;
+      border-radius:30px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px 0 rgb(0 0 0 / 9%);
+    }
+
+    .id-card .body-id-card{
+        background:url(../img/bg-id-card.png) no-repeat center;
+        height:100%;
+        width: 100%;
+        padding: 30px;
+    }
+
+    .id-card .body-id-card .avatar{
+      margin-bottom: 10px;
+    }
+
+    .id-card .body-id-card h3{
+      font-size: 16px;
+      text-align: center;
+      margin: auto;
+    }
+
+    .id-card .body-id-card p{
+      font-size: 14px;
+      text-transform: uppercase;
+      color: #333333;
+    }
+
+    .id-card .body-id-card .barcode{
+      position: relative;
+      display: inline-block;
+      background:#ffffff;
+      height: 155px;
+      width: 155px;
+      box-shadow: 0 5px 20px 0 rgb(0 0 0 / 9%);
+      margin-top: 30px;
+      border:solid 2px #ffffff;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .id-card .body-id-card .barcode img{
+      height:150px;
+      width: 150px;
+      text-align: center;
+      display: inline-block;
+    }
+}

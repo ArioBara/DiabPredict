@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% set page = 'prediksi' %}
+{% block body %}
+<!-- App Capsule -->
+<div id="appCapsule">
+    <div class="section">
+        <div class="row mt-2">
+            <div class="col-md-6 mb-3">
+                <div class="card h-100">
+                    <div class="card-header bg-success text-light">
+                        <i class="fas fa-user-md"></i>
+                        Skor
+                    </div>
+                    <div class="card-body text-center">
+                        {% if prediction == 'Positif' %}
+                        <h1 class="text-danger mt-3">{{ prediction }}</h1>
+                        {% else %}
+                        <h1 class="text-success mt-3">{{ prediction }}</h1>
+                        {% endif %}
+                        <h2>{{ influential_count }} dari {{ total_features }} Gejala</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="card h-100">
+                    <div class="card-header bg-success text-light">
+                        <i class="fas fa-medkit"></i>
+                        Faktor yang Mempengaruhi
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            {% for feature in influential_features %}
+                                <li>{{ feature }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="row">
+            <div class="col-12 mb-3">
+                <div class="card">
+                    <div class="card-header bg-success text-light">
+                        <i class="fas fa-info-circle"></i>
+                        Informasi Tambahan dan Saran Pencegahan:
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <ul>
+                                {% for feature in influential_features %}
+                                <li><span class="fw-bold">{{ feature }}:</span> {{ prevention_advice[feature] }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+{% endblock %}
