@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ titile }}</title>
+    <title>{{ title }}</title>
     <link rel='icon' type='image/x-icon' href="{{ url_for('static', filename='img/icon.png') }}">
     <!-- header.html -->
 
@@ -22,6 +22,32 @@
             border-radius: 20px;
             padding: 20px;
         }
+        .iframe-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* Untuk membuat aspek rasio 16:9 */
+  }
+  .zoomable-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    transition: transform 0.3s ease;
+    transform-origin: 0 0;
+  }
+  .zoomable-iframe.zoomed {
+    transform: scale(1.5); /* Sesuaikan faktor zooming di sini */
+  }
+
+  /* Media query untuk tampilan mobile */
+  @media only screen and (max-width: 600px) {
+    .iframe-container {
+      padding-top: 100%; /* Sesuaikan dengan kebutuhan Anda */
+    }
+  }
     </style>
 </head>
 

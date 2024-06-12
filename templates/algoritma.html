@@ -1,0 +1,201 @@
+{% extends 'base.html' %}
+{% set page = 'algoritma' %}
+{% block body %}
+<!-- App Capsule -->
+<div id="appCapsule">
+
+    <div class="section mt-2 mb-2">
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <div class="card h-100">
+                    <div class="card-header bg-success text-light">
+                        <i class="fas fa-project-diagram"></i> Proses Pembuatan Model
+                    </div>
+                    <div class="card-body">
+                        <img src="{{ url_for('static', filename='img/proses.png') }}" class="img-fluid mt-2 mb-5" alt="Plot">
+                        <a href="{{ url_for('machine_learning') }}" class="btn btn-success">Lihat Notebook</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="card h-100">
+                    <div class="card-header bg-success text-light">
+                        <i class="fas fa-chart-bar"></i> Visualisasi Data
+                    </div>
+                    <div class="card-body">
+                        <img src="data:image/png;base64,{{ plot }}" class="img-fluid" alt="Plot">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="row mt-2">
+            <div class="col-12 mb-3">
+                <div class="card h-100">
+                    <div class="card-header bg-success text-light">
+                        <i class="fas fa-database"></i> Dataset
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Menampilkan 5 data teratas:</h5>
+                        <div class="table-responsive">
+                            {{ data | safe }}
+                        </div>                      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section mt-2 mb-2">
+        <div class="section-title text-center">
+            <h2 class="text-success"><i class="fas fa-cogs"></i> Proses Data</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <div class="card h-100">
+                    <div class="card-header bg-success text-light">
+                        <i class="fas fa-microchip"></i> Preprocessing
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            {{ preprocessing | safe }}
+                        </div>                      
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="card h-100">
+                    <div class="card-header bg-success text-light">
+                        <i class="fas fa-hands-helping"></i> Pemilihan Fitur
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            {{ correlation_df | safe }}
+                        </div>                      
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="card h-100">
+                    <div class="card-header bg-success text-light">
+                        <i class="fas fa-globe"></i> Heatmap
+                    </div>
+                    <div class="card-body">
+                        <img src="data:image/png;base64,{{ heatmap }}" class="img-fluid" alt="Heatmap">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="card h-100">
+                    <div class="card-header bg-success text-light">
+                        <i class="fas fa-vote-yea"></i> Korelasi Fitur
+                    </div>
+                    <div class="card-body">
+                        <img src="data:image/png;base64,{{ correlation_plot }}" class="img-fluid" alt="correlation_plot">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section mt-2 mb-2">
+        <div class="section-title text-center">
+            <h2 class="text-success"><i class="fas fa-window-maximize"></i> Pembagian Data</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <div class="card h-100">
+                    <div class="card-header bg-success text-light">
+                        <i class="fas fa-columns"></i> Membagi Data
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            {{ df_dimensions | safe }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="card h-100">
+                    <div class="card-header bg-success text-light">
+                        <i class="fas fa-stream"></i> Distribusi Pembagian Data
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Distribusi variabel target dalam data latih:</h5>
+                        <div class="table-responsive">
+                            {{ train | safe }}
+                        </div>
+                        <br>
+                        <h5 class="card-title">Distribusi variabel target dalam data uji:</h5>
+                        <div class="table-responsive">
+                            {{ test | safe }}
+                        </div>                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="row mt-2">
+            <div class="col-12 mb-3">
+                <div class="card h-100">
+                    <div class="card-header bg-success text-light">
+                        <i class="fas fa-brain"></i> Pembangunan Model
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            {{ model | safe }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-12 mb-3">
+                <div class="card h-100">
+                    <div class="card-header bg-success text-light">
+                        <i class="fas fa-vial"></i> Pengujian Model
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Hasil cross-validation Decision Tree:</h5>
+                        <div class="table-responsive">
+                            {{ cv_results | safe }}
+                        </div>
+                        <br>
+                        <h5 class="card-title">Rata-rata Akurasi cross-validation Decision Tree:</h5>
+                        <p class="text-success">{{ mean_accuracy }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-12 mb-3">
+                <div class="card h-100">
+                    <div class="card-header bg-success text-light">
+                        <i class="fas fa-chart-pie"></i> Evaluasi Model
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            {{ results | safe }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+    // Javascript untuk menambahkan class 'zoomed' saat iframe ditekan
+    document.querySelector('.iframe-container').addEventListener('click', function() {
+      document.querySelector('.zoomable-iframe').classList.toggle('zoomed');
+    });
+  </script>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% set page = 'notebook' %}
+{% block body %}
+<!-- App Capsule -->
+<div id="appCapsule">
+    <div class="section">
+        <div class="row mt-2">
+            <div class="col-12 mb-3">
+                <div class="card h-100">
+                    <div class="card-header bg-success text-light">
+                        <i class="fas fa-book"></i> Notebook
+                    </div>
+                    <div class="card-body">
+                        <a href="{{ url_for('index') }}" class="btn btn-success">Kembali ke Beranda</a>
+                        <p class="text-danger font-italic mb-2">*Gunakan mode desktop untuk tampilan yang lebih baik</p>
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="{{ url_for('static', filename='ML_Diabetes.html') }}" allow="fullscreen"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Javascript untuk menambahkan class 'zoomed' saat iframe ditekan
+    document.querySelector('.iframe-container').addEventListener('click', function() {
+      document.querySelector('.zoomable-iframe').classList.toggle('zoomed');
+    });
+  </script>
+{% endblock %}
